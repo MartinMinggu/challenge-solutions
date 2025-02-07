@@ -13,3 +13,22 @@ class Solution {
         return false;
     }
 }
+
+
+// Two Sum
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    let temp = new Map();
+    for(let i =0; i < nums.length; i++){
+        let pengurangan =  target - nums[i];
+        if(temp.has(pengurangan)){
+            return [temp.get(pengurangan), i]
+        }
+        temp.set(nums[i], i);
+    }
+    return [];
+};
